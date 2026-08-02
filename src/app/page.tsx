@@ -20,7 +20,7 @@ export default function Home() {
 
         <div className="mt-8 max-w-2xl space-y-8 text-base leading-relaxed text-foreground/90">
           <p>{intro}</p>
-          <p>{career}</p>
+          <p>{education}</p>
 
           <details className="group">
             <summary className="list-none [&::-webkit-details-marker]:hidden inline-flex cursor-pointer items-center gap-1.5 text-sm font-medium text-accent">
@@ -30,7 +30,7 @@ export default function Home() {
                 className="transition-transform duration-200 group-open:rotate-180"
               />
             </summary>
-            <p className="mt-3">{education}</p>
+            <p className="mt-3">{career}</p>
           </details>
         </div>
 
