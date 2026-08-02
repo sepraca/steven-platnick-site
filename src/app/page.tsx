@@ -5,7 +5,7 @@ import ProfileLinksRow from "@/components/ProfileLinksRow";
 
 export default function Home() {
   const profile = getProfile();
-  const bioParagraphs = profile.bio.split("\n\n");
+  const [intro, career, education] = profile.bio.split("\n\n");
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-16">
@@ -18,10 +18,14 @@ export default function Home() {
           <p className="mt-1 text-sm text-muted">{profile.location}</p>
         )}
 
-        <div className="mt-8 space-y-4 max-w-2xl text-base leading-relaxed text-foreground/90">
-          {bioParagraphs.map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
+        <div className="mt-8 max-w-2xl space-y-8 text-base leading-relaxed text-foreground/90">
+          <div className="space-y-4">
+            <p>{intro}</p>
+            <p>{education}</p>
+          </div>
+          <div className="space-y-4">
+            <p>{career}</p>
+          </div>
         </div>
 
         <div className="mt-8">
