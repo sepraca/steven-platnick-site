@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Steven Platnick — Personal Site
 
-## Getting Started
+A minimalist academic personal site built with Next.js (App Router), Tailwind CSS, and lucide-react icons. Content is stored as plain Markdown files in `content/` — no CMS, no database.
 
-First, run the development server:
+## Running locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Updating content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Everything you'd normally update lives in `content/*.md`. Edit, save, commit, push — Vercel rebuilds and redeploys automatically.
 
-## Learn More
+### About Me / bio — `content/profile.md`
 
-To learn more about Next.js, take a look at the following resources:
+Frontmatter has your name, tagline, location, GitHub username, and professional links (ORCID, Google Scholar, ResearchGate, LinkedIn, Web of Science). The body text below the `---` is your bio, rendered as paragraphs on the homepage.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Full CV — `content/cv.md`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+One long Markdown document using `##` headings for each CV section (Positions, Education, Awards, etc.) and `-` bullets for entries. To add a new award, position, or talk, just add a bullet under the right heading — it's rendered as-is on the `/cv` page. Standard Markdown works: `**bold**`, `*italics*`, nested bullets.
 
-## Deploy on Vercel
+### Publications — `content/publications.md`, `content/book-chapters.md`, `content/other-publications.md`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+These are "one file per section" databases. Each entry looks like:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+---
+id: pub-160
+year: 2026
+link: "https://doi.org/10.xxxx/example"
+---
+Author A., Author B., and Platnick S. Title of the paper. Journal Name 12 (3): 45-67.
+
+===
+
+---
+id: pub-161
+year: 2026
+---
+Next entry...
+```
+
+- Entries are separated by a line containing only `===`.
+- `id` should be unique within the file (e.g. `pub-160`, `bc-8`, `other-6`).
+- `year` and `link` are optional — omit either if unknown; the site just won't show a badge/link icon for that entry. (A handful of the original CV's citations don't state a year in plain text, so those are left without one rather than guessing.)
+- The body text under the second `---` is the citation exactly as you want it displayed — write it however reads best; no special formatting is required.
+
+**To add a new publication:** copy the block for an existing entry, paste it above or below (order doesn't matter — new entries are usually added at the top to match "most recent first"), update the fields and citation text.
+
+The **Publications** page includes a live text-search box over the journal articles list — no maintenance needed, it just searches whatever text is in `publications.md`.
+
+### Projects page
+
+Pulls your public GitHub repositories live from the GitHub API at build/request time (`src/lib/github.ts`, username `sepraca`) — nothing to maintain here. Forked and archived repos are filtered out automatically. To feature a different set of repos, edit the filter logic in that file.
+
+## Deployment
+
+This project is set up for [Vercel](https://vercel.com):
+
+1. Push this repo to GitHub.
+2. In the Vercel dashboard, "Add New Project" → import the GitHub repo. Vercel auto-detects Next.js; no config needed.
+3. Every push to `main` redeploys automatically.
+
+## Tech stack
+
+- [Next.js 16](https://nextjs.org) (App Router, static generation)
+- [Tailwind CSS 4](https://tailwindcss.com) + `@tailwindcss/typography`
+- [lucide-react](https://lucide.dev) for icons
+- [gray-matter](https://github.com/jonschlinkert/gray-matter) + [react-markdown](https://github.com/remarkjs/react-markdown) for Markdown content
