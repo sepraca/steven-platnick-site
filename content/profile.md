@@ -1,5 +1,5 @@
 ---
-name: "Steven Platnick"
+name: "Steven Platnick, PhD"
 tagline: "Atmospheric Scientist — Satellite & Airborne Cloud Remote Sensing"
 location: "Greenbelt, MD"
 github: "sepraca"
