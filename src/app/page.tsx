@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { getProfile } from "@/lib/content";
 import ProfileLinksRow from "@/components/ProfileLinksRow";
+import BioParagraph from "@/components/BioParagraph";
 
 export default function Home() {
   const profile = getProfile();
@@ -19,8 +20,8 @@ export default function Home() {
         )}
 
         <div className="mt-8 max-w-2xl space-y-8 text-base leading-relaxed text-foreground/90">
-          <p>{intro}</p>
-          <p>{education}</p>
+          <BioParagraph text={intro} />
+          <BioParagraph text={education} />
 
           <details className="group">
             <summary className="list-none [&::-webkit-details-marker]:hidden inline-flex cursor-pointer items-center gap-1.5 text-sm font-medium text-accent">
@@ -30,7 +31,9 @@ export default function Home() {
                 className="transition-transform duration-200 group-open:rotate-180"
               />
             </summary>
-            <p className="mt-3">{career}</p>
+            <div className="mt-3">
+              <BioParagraph text={career} />
+            </div>
           </details>
         </div>
 
