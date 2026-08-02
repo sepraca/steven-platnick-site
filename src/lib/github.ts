@@ -10,6 +10,7 @@ export interface Repo {
 }
 
 const GITHUB_USERNAME = "sepraca";
+const EXCLUDED_REPOS = ["steven-platnick-site"];
 
 interface GitHubApiRepo {
   name: string;
@@ -41,7 +42,7 @@ export async function getPublicRepos(): Promise<Repo[]> {
   const repos: GitHubApiRepo[] = await res.json();
 
   return repos
-    .filter((r) => !r.fork && !r.archived)
+    .filter((r) => !r.fork && !r.archived && !EXCLUDED_REPOS.includes(r.name))
     .map((r) => ({
       name: r.name,
       description: r.description,
