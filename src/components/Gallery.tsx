@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Download } from "lucide-react";
 import type { GalleryImage } from "@/lib/content";
 import BioParagraph from "@/components/BioParagraph";
 
@@ -19,6 +20,16 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
           <figcaption className="text-xs text-muted leading-relaxed">
             <BioParagraph text={img.caption} />
           </figcaption>
+          {img.downloadable && (
+            <a
+              href={img.image}
+              download
+              className="inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:underline"
+            >
+              <Download size={13} />
+              Download full resolution
+            </a>
+          )}
         </figure>
       ))}
     </div>
