@@ -19,7 +19,7 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            className="object-cover opacity-[0.12] dark:opacity-[0.18]"
+            className="object-cover opacity-[0.28] dark:opacity-[0.22]"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/85 to-background" />
         </div>
