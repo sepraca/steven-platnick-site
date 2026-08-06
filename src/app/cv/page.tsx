@@ -34,13 +34,13 @@ export default function CvPage() {
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{before}</ReactMarkdown>
 
         {after && (
-          <div className="not-prose mb-6 w-full sm:float-right sm:ml-6 sm:mb-4 sm:w-48">
+          <div className="not-prose mb-6 w-full sm:float-right sm:ml-6 sm:mr-4 sm:mt-12 sm:mb-4 sm:w-64">
             <div className="relative aspect-video sm:aspect-square overflow-hidden rounded-lg border border-border">
               <Image
                 src="/images/ship-track-mast-rc10.jpg"
                 alt="A ship track viewed from the NASA ER-2 (RC-10 camera) during the MAST field campaign, 1994"
                 fill
-                sizes="(min-width: 640px) 192px, 100vw"
+                sizes="(min-width: 640px) 256px, 100vw"
                 className="object-cover"
               />
             </div>
