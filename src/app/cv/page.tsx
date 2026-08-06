@@ -38,15 +38,15 @@ export default function CvPage() {
             <div className="relative aspect-video sm:aspect-square overflow-hidden rounded-lg border border-border">
               <Image
                 src="/images/ship-track-mast-rc10.jpg"
-                alt="A ship track viewed from the NASA ER-2 during the MAST field campaign, 1994"
+                alt="A ship track viewed from the NASA ER-2 (RC-10 camera) during the MAST field campaign, 1994"
                 fill
                 sizes="(min-width: 640px) 192px, 100vw"
                 className="object-cover"
               />
             </div>
             <p className="mt-2 text-xs text-muted leading-relaxed">
-              A ship track viewed from the NASA ER-2 during the MAST field
-              campaign (RC-10 camera), 1994.
+              A ship track viewed from the NASA ER-2 (RC-10 camera) during
+              the MAST field campaign, 1994.
             </p>
           </div>
         )}
