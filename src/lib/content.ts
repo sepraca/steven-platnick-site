@@ -36,7 +36,7 @@ export interface GalleryImage {
   id: string;
   image: string;
   caption: string;
-  downloadable?: boolean;
+  downloadable: boolean;
 }
 
 export function getGalleryImages(): GalleryImage[] {
@@ -44,7 +44,7 @@ export function getGalleryImages(): GalleryImage[] {
     id: String(data.id),
     image: String(data.image),
     caption: content.trim(),
-    downloadable: Boolean(data.downloadable),
+    downloadable: data.downloadable !== false,
   }));
 }
 

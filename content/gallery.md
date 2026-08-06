@@ -25,6 +25,5 @@ Earth composite stitched together from multiple MODIS satellite overpasses.
 ---
 id: gallery-4
 image: "/images/logo.png"
-downloadable: true
 ---
 Personal logo — full resolution available for presentations and other use.
