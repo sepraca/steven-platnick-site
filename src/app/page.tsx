@@ -42,7 +42,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-16 grid gap-4 sm:grid-cols-3">
+      <section className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {[
           {
             href: "/cv",
@@ -58,6 +58,11 @@ export default function Home() {
             href: "/projects",
             title: "Projects",
             desc: "Public code repositories on GitHub.",
+          },
+          {
+            href: "/gallery",
+            title: "Gallery",
+            desc: "Satellite and field-campaign imagery.",
           },
         ].map((card) => (
           <Link
