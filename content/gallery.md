@@ -18,4 +18,4 @@ A ship track viewed from the NASA ER-2 during the MAST field campaign (RC-10 cam
 id: gallery-3
 image: "/images/earth-satellite.jpg"
 ---
-Earth observed from geostationary orbit.
+Earth composite stitched together from multiple MODIS satellite overpasses.
