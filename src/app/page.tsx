@@ -1,13 +1,11 @@
 import Link from "next/link";
 import { ArrowRight, ChevronDown } from "lucide-react";
-import { getGalleryImages, getProfile } from "@/lib/content";
+import { getProfile } from "@/lib/content";
 import ProfileLinksRow from "@/components/ProfileLinksRow";
 import BioParagraph from "@/components/BioParagraph";
-import Gallery from "@/components/Gallery";
 
 export default function Home() {
   const profile = getProfile();
-  const gallery = getGalleryImages();
   const [intro, career, education] = profile.bio.split("\n\n");
 
   return (
@@ -44,18 +42,7 @@ export default function Home() {
         </div>
       </section>
 
-      {gallery.length > 0 && (
-        <section className="mt-16">
-          <h2 className="font-serif text-lg font-semibold text-foreground">
-            Imagery
-          </h2>
-          <div className="mt-4">
-            <Gallery images={gallery} />
-          </div>
-        </section>
-      )}
-
-      <section className="mt-16 grid gap-4 sm:grid-cols-3">
+      <section className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {[
           {
             href: "/cv",
@@ -71,6 +58,11 @@ export default function Home() {
             href: "/projects",
             title: "Projects",
             desc: "Public code repositories on GitHub.",
+          },
+          {
+            href: "/gallery",
+            title: "Gallery",
+            desc: "Satellite and field-campaign imagery.",
           },
         ].map((card) => (
           <Link
