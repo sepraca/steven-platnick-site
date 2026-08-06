@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { getProfile } from "@/lib/content";
@@ -11,13 +12,24 @@ export default function Home() {
   return (
     <div className="mx-auto max-w-4xl px-6 py-16">
       <section>
-        <h1 className="font-serif text-4xl sm:text-5xl font-semibold tracking-tight text-foreground">
-          {profile.name}
-        </h1>
-        <p className="mt-3 text-lg text-accent font-medium">{profile.tagline}</p>
-        {profile.location && (
-          <p className="mt-1 text-sm text-muted">{profile.location}</p>
-        )}
+        <div className="flex items-center gap-5">
+          <span className="relative h-20 w-20 sm:h-28 sm:w-28 shrink-0 overflow-hidden rounded-full border border-border">
+            <Image
+              src="/images/logo.png"
+              alt="Steven Platnick's personal logo: Earth with a satellite in orbit, wreathed in roses"
+              fill
+              sizes="(min-width: 640px) 112px, 80px"
+              className="object-cover scale-[1.08]"
+              priority
+            />
+          </span>
+          <div>
+            <h1 className="font-serif text-4xl sm:text-5xl font-semibold tracking-tight text-foreground">
+              {profile.name}
+            </h1>
+            <p className="mt-3 text-lg text-accent font-medium">{profile.tagline}</p>
+          </div>
+        </div>
 
         <div className="mt-8 max-w-2xl space-y-8 text-base leading-relaxed text-foreground/90">
           <BioParagraph text={intro} />
