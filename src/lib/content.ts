@@ -15,20 +15,35 @@ export interface CitationEntry {
   citation: string;
 }
 
-function parseEntryDb(raw: string): CitationEntry[] {
+function splitDbChunks(raw: string) {
   return raw
     .split(/\n===\n/)
     .map((chunk) => chunk.trim())
     .filter(Boolean)
-    .map((chunk) => {
-      const { data, content } = matter(chunk);
-      return {
-        id: String(data.id),
-        year: data.year ? Number(data.year) : undefined,
-        link: data.link as string | undefined,
-        citation: content.trim(),
-      };
-    });
+    .map((chunk) => matter(chunk));
+}
+
+function parseEntryDb(raw: string): CitationEntry[] {
+  return splitDbChunks(raw).map(({ data, content }) => ({
+    id: String(data.id),
+    year: data.year ? Number(data.year) : undefined,
+    link: data.link as string | undefined,
+    citation: content.trim(),
+  }));
+}
+
+export interface GalleryImage {
+  id: string;
+  image: string;
+  caption: string;
+}
+
+export function getGalleryImages(): GalleryImage[] {
+  return splitDbChunks(readFile("gallery.md")).map(({ data, content }) => ({
+    id: String(data.id),
+    image: String(data.image),
+    caption: content.trim(),
+  }));
 }
 
 export function getPublications(): CitationEntry[] {
