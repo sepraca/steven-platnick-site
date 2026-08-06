@@ -25,13 +25,24 @@ export default function Home() {
         </div>
 
         <div className="relative mx-auto max-w-4xl px-6 py-16">
-          <h1 className="font-serif text-4xl sm:text-5xl font-semibold tracking-tight text-foreground">
-            {profile.name}
-          </h1>
-          <p className="mt-3 text-lg text-accent font-medium">{profile.tagline}</p>
-          {profile.location && (
-            <p className="mt-1 text-sm text-muted">{profile.location}</p>
-          )}
+          <div className="flex items-center gap-5">
+            <span className="relative h-28 w-28 sm:h-36 sm:w-36 shrink-0 overflow-hidden rounded-full border border-border">
+              <Image
+                src="/images/logo.png"
+                alt="Steven Platnick's personal logo: Earth with a satellite in orbit, wreathed in roses"
+                fill
+                sizes="(min-width: 640px) 144px, 112px"
+                className="object-cover scale-[1.08]"
+                priority
+              />
+            </span>
+            <div>
+              <h1 className="font-serif text-4xl sm:text-5xl font-semibold tracking-tight text-foreground">
+                {profile.name}
+              </h1>
+              <p className="mt-3 text-lg text-accent font-medium">{profile.tagline}</p>
+            </div>
+          </div>
 
           <div className="mt-8 max-w-2xl space-y-8 text-base leading-relaxed text-foreground/90">
             <BioParagraph text={intro} />

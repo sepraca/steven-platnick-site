@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -23,10 +24,21 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <Link
             href="/"
-            className="font-serif text-lg font-semibold tracking-tight text-foreground"
+            className="flex items-center gap-2.5"
             onClick={() => setOpen(false)}
           >
-            Steven Platnick
+            <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full">
+              <Image
+                src="/images/logo.png"
+                alt=""
+                fill
+                sizes="36px"
+                className="object-cover scale-[1.08]"
+              />
+            </span>
+            <span className="font-serif text-lg font-semibold tracking-tight text-foreground">
+              Steven Platnick
+            </span>
           </Link>
 
           <nav className="hidden sm:flex items-center gap-1">
