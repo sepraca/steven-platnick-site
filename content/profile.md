@@ -1,7 +1,6 @@
 ---
 name: "Steven Platnick, PhD"
 tagline: "Atmospheric Scientist — Satellite & Airborne Cloud Remote Sensing"
-location: "Greenbelt, MD"
 github: "sepraca"
 links:
   orcid: "https://orcid.org/0000-0003-3964-3567"
