@@ -26,12 +26,12 @@ export default function Home() {
 
         <div className="relative mx-auto max-w-4xl px-6 py-16">
           <div className="flex items-center gap-5">
-            <span className="relative h-28 w-28 sm:h-36 sm:w-36 shrink-0 overflow-hidden rounded-full">
+            <span className="relative h-36 w-36 sm:h-48 sm:w-48 shrink-0 overflow-hidden rounded-full">
               <Image
                 src="/images/logo.png"
                 alt="Steven Platnick's personal logo: Earth with a satellite in orbit, wreathed in roses"
                 fill
-                sizes="(min-width: 640px) 144px, 112px"
+                sizes="(min-width: 640px) 192px, 144px"
                 className="object-cover scale-[0.92]"
                 priority
               />
