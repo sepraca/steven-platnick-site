@@ -33,7 +33,7 @@ export default function Navbar() {
                 alt=""
                 fill
                 sizes="36px"
-                className="object-cover scale-[1.08]"
+                className="object-cover scale-[0.92]"
               />
             </span>
             <span className="font-serif text-lg font-semibold tracking-tight text-foreground">

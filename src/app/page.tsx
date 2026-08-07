@@ -32,7 +32,7 @@ export default function Home() {
                 alt="Steven Platnick's personal logo: Earth with a satellite in orbit, wreathed in roses"
                 fill
                 sizes="(min-width: 640px) 144px, 112px"
-                className="object-cover scale-[1.08]"
+                className="object-cover scale-[0.92]"
                 priority
               />
             </span>
