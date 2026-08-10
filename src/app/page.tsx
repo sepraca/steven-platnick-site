@@ -24,14 +24,14 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/85 to-background" />
         </div>
 
-        <div className="relative mx-auto max-w-4xl px-6 py-16">
+        <div className="relative mx-auto max-w-4xl px-6 pt-10 pb-16">
           <div className="max-w-2xl text-center">
-            <span className="relative mx-auto block h-32 w-32 overflow-hidden rounded-full sm:h-52 sm:w-52">
+            <span className="relative mx-auto block h-36 w-36 overflow-hidden rounded-full sm:h-60 sm:w-60">
               <Image
                 src="/images/logo.png"
                 alt="Steven Platnick's personal logo: Earth with a satellite in orbit, wreathed in roses"
                 fill
-                sizes="(min-width: 640px) 208px, 128px"
+                sizes="(min-width: 640px) 240px, 128px"
                 className="object-cover scale-[0.92]"
                 priority
               />
