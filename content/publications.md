@@ -1057,14 +1057,6 @@ Moody E. G., M. D. King, C. L. Schaaf, D. K. Hall, and S. E. Platnick Northern H
 ===
 
 ---
-id: pub-127
-year: 2007
----
-Yang, P. L. Zhang, G. Hong, S. L. Nasiri, B. A. Baum, H.-L. Huang, M. D. King, and S. Platnick, 2007: Differences between collection 004 and 005 MODIS ice cloud optical/microphysical products and their impact on radiative forcing simulations, IEEE Trans. Geosci. Remote Sens., 45, 2886-2899.
-
-===
-
----
 id: pub-128
 year: 2007
 ---
