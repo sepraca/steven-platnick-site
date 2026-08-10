@@ -1,8 +1,10 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { imageSize } from "image-size";
 
 const contentDir = path.join(process.cwd(), "content");
+const publicDir = path.join(process.cwd(), "public");
 
 function readFile(name: string): string {
   return fs.readFileSync(path.join(contentDir, name), "utf8");
@@ -37,15 +39,27 @@ export interface GalleryImage {
   image: string;
   caption: string;
   downloadable: boolean;
+  width: number;
+  height: number;
+}
+
+function getImageDimensions(imagePath: string): { width: number; height: number } {
+  const buffer = fs.readFileSync(path.join(publicDir, imagePath));
+  const { width, height } = imageSize(buffer);
+  return { width, height };
 }
 
 export function getGalleryImages(): GalleryImage[] {
-  return splitDbChunks(readFile("gallery.md")).map(({ data, content }) => ({
-    id: String(data.id),
-    image: String(data.image),
-    caption: content.trim(),
-    downloadable: data.downloadable !== false,
-  }));
+  return splitDbChunks(readFile("gallery.md")).map(({ data, content }) => {
+    const image = String(data.image);
+    return {
+      id: String(data.id),
+      image,
+      caption: content.trim(),
+      downloadable: data.downloadable !== false,
+      ...getImageDimensions(image),
+    };
+  });
 }
 
 export function getPublications(): CitationEntry[] {

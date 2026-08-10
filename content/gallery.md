@@ -24,6 +24,14 @@ Earth composite stitched together from multiple MODIS satellite overpasses.
 
 ---
 id: gallery-4
+image: "/images/RemSens-Platnick-et al-2020-graphical-summary.png"
+---
+Platnick et al, Remote Sens., 2020, 12, 4165; doi:10.3390/rs12244165 
+
+===
+
+---
+id: gallery-5
 image: "/images/logo.png"
 ---
 Personal logo — full resolution available for presentations and other use.

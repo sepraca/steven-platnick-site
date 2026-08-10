@@ -8,13 +8,16 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
     <div className="grid gap-6 sm:grid-cols-3">
       {images.map((img) => (
         <figure key={img.id} className="space-y-2">
-          <div className="relative aspect-square overflow-hidden rounded-lg border border-border bg-surface">
+          <div
+            className="relative overflow-hidden rounded-lg border border-border bg-surface"
+            style={{ aspectRatio: `${img.width} / ${img.height}` }}
+          >
             <Image
               src={img.image}
               alt={img.caption}
               fill
               sizes="(min-width: 640px) 33vw, 100vw"
-              className="object-cover"
+              className="object-contain"
             />
           </div>
           <figcaption className="text-xs text-muted leading-relaxed">
