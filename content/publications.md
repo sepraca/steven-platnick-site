@@ -3,7 +3,7 @@ id: pub-1
 year: 2025
 link: "https://egusphere.copernicus.org/preprints/2025/egusphere-2025-4169/"
 ---
-Ademakinwa, A. S., Zhang, Z., Miller, D., Meyer, K. G., Platnick, S., Tushar, Z. H., Purushotham, S., and Wang, J.: Impacts of the Three-dimensional Radiative Effects on Cloud Droplet Number Concentration Retrieval and Aerosol Cloud Interaction Analysis, EGUsphere [preprint], https://egusphere.copernicus.org/preprints/2025/egusphere-2025-4169/, 2025. [discussion closed 4-2-26, accepted 7-5-26]
+Ademakinwa, A. S., Zhang, Z., Miller, D., Meyer, K. G., Platnick, S., Tushar, Z. H., Purushotham, S., and Wang, J.: Impacts of the Three-dimensional Radiative Effects on Cloud Droplet Number Concentration Retrieval and Aerosol Cloud Interaction Analysis, ACP, 11449-11471, 2026 https://acp.copernicus.org/articles/26/11449/2026/.
 
 ===
 
