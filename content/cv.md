@@ -25,7 +25,7 @@
 
 - **Ph.D., Atmospheric Sciences**: University of Arizona, Tucson AZ, September 1991. Dissertation: *Remote Sensing the Susceptibility of Cloud Albedo to Changes in Drop Concentration*, Advisor: S. A. Twomey.
 - **M.S.E., Electrical Engineering**: University of California, Berkeley CA, December 1980. Thesis: *Bistatic Microwave Phase Measurements*.
-- **B.S.E., Electrical Engineering**: Duke University, Durham NC, May 1979.
+- **B.S.E., Electrical Engineering**: Duke University, Durham NC, May 1979. Phi Beta Kappa, Tau Beta Pi, Eta Kappa Nu.
 
 ## Professional Service
 
