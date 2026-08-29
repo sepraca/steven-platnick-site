@@ -27,7 +27,7 @@ Platnick, S., et al., MODIS Cloud Optical Properties: User Guide for the Collect
 ---
 id: other-4
 year: 2018
-link: "https://archive.storycorps.org/communities/agu-narratives/"
+link: "https://archive.storycorps.org/search/interviews/?q&search_type=basic&search_context=interviews&page_num=1&page_size=25&view_by=grid&visibility=all&q=Platnick"
 ---
 AGU Centennial Story Corp Narratives Project, Dec. 2018, https://archive.storycorps.org/communities/agu-narratives/.
 
