@@ -85,7 +85,7 @@ export default function Home() {
             {
               href: "/projects",
               title: "Projects",
-              desc: "Public code repositories on GitHub.",
+              desc: "Code repositories at GitHub.",
             },
             {
               href: "/gallery",
