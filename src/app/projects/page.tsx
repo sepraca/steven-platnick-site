@@ -22,7 +22,7 @@ export default function ProjectsPage() {
           href="https://github.com/sepraca"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-accent hover:underline inline-flex items-center gap-1"
+          className="text-accent hover:underline inline-flex items-center gap-1 align-middle"
         >
           <Code2 size={14} /> GitHub
         </a>
