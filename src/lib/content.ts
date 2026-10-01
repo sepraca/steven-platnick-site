@@ -106,3 +106,21 @@ export function getProfile(): Profile {
 export function getCvMarkdown(): string {
   return readFile("cv.md");
 }
+
+export interface Project {
+  id: string;
+  name: string;
+  url: string;
+  private: boolean;
+  description: string;
+}
+
+export function getProjects(): Project[] {
+  return splitDbChunks(readFile("projects.md")).map(({ data, content }) => ({
+    id: String(data.id),
+    name: String(data.name),
+    url: String(data.url),
+    private: Boolean(data.private),
+    description: content.trim(),
+  }));
+}

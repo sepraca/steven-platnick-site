@@ -53,9 +53,22 @@ Next entry...
 
 The **Publications** page includes a live text-search box over the journal articles list — no maintenance needed, it just searches whatever text is in `publications.md`.
 
-### Projects page
+### Projects — `content/projects.md`
 
-Pulls your public GitHub repositories live from the GitHub API at build/request time (`src/lib/github.ts`, username `sepraca`) — nothing to maintain here. Forked and archived repos are filtered out automatically. To feature a different set of repos, edit the filter logic in that file.
+Same "one file per section" database pattern as the publications files. Each entry:
+
+```
+---
+id: project-4
+name: "Display name for the site"
+url: "https://github.com/sepraca/repo-name"
+private: true
+---
+Description shown on the card.
+```
+
+- `private: true` shows a "Private repository — contact for details" note on the card instead of pretending it's browsable; omit it (or set `false`) for public repos.
+- Unlike the old version, this list is curated by hand rather than pulled live from GitHub — needed since private repos can't be fetched from the public API anyway, and it lets the display name/description differ from GitHub's own. To add a project, copy an existing block, give it a unique `id`, and fill in the fields.
 
 ## Deployment
 

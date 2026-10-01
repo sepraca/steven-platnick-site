@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { Code2 } from "lucide-react";
-import { getPublicRepos } from "@/lib/github";
+import { getProjects } from "@/lib/content";
 import ProjectCard from "@/components/ProjectCard";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Public GitHub repositories by Steven Platnick.",
+  description: "Code repositories by Steven Platnick.",
 };
 
-export default async function ProjectsPage() {
-  const repos = await getPublicRepos();
+export default function ProjectsPage() {
+  const projects = getProjects();
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-16">
@@ -17,7 +17,7 @@ export default async function ProjectsPage() {
         Projects
       </h1>
       <p className="mt-2 text-sm text-muted">
-        Public code repositories, pulled live from{" "}
+        Code repositories at{" "}
         <a
           href="https://github.com/sepraca"
           target="_blank"
@@ -29,14 +29,12 @@ export default async function ProjectsPage() {
         .
       </p>
 
-      {repos.length === 0 ? (
-        <p className="mt-10 text-sm text-muted">
-          No public repositories found (or GitHub is temporarily unavailable).
-        </p>
+      {projects.length === 0 ? (
+        <p className="mt-10 text-sm text-muted">No projects listed yet.</p>
       ) : (
         <div className="mt-10 grid gap-4 sm:grid-cols-2">
-          {repos.map((repo) => (
-            <ProjectCard key={repo.name} repo={repo} />
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       )}
